@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { ChakraProvider, Grid, GridItem } from '@chakra-ui/react';
+import { FiAirplay } from 'react-icons/fi';
+import { invoke } from '@tauri-apps/api/tauri';
+
+import { NavItem, SideNavBar } from 'components';
 
 import reactLogo from './assets/react.svg';
-import { invoke } from '@tauri-apps/api/tauri';
 import './App.css';
 
 function App() {
@@ -17,10 +20,13 @@ function App() {
     return (
         <ChakraProvider>
             <Grid h='100%' p='3' templateRows='repeat(2, 1fr)' templateColumns='repeat(5, 1fr)' gap={4}>
-                <GridItem rowSpan={2} colSpan={1} bg='tomato' />
+                <GridItem rowSpan={2} colSpan={1} bg='tomato'>
+                    <SideNavBar></SideNavBar>
+                </GridItem>
                 <GridItem colSpan={2} bg='papayawhip' />
                 <GridItem colSpan={2} bg='papayawhip' />
-                <GridItem colSpan={4} bg='tomato' />
+                <GridItem colSpan={4} bg='tomato'>
+                </GridItem>
             </Grid>
             {/* <div className='container'>
                 <h1>Welcome to Tauri!</h1>
